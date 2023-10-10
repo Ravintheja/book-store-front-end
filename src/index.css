@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #374259;
+  display: flex;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h4 {
+  color: #F2D8D8;
+}
+
+h6 { 
+  color: #ffffff;
+}
+
+p {
+  text-align: justify;
+}
+
+label {
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  background: #F2D8D8;
+}
+
+.App {
+  /* background-color: blueviolet; */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primaryBox {
+  background-color: #F2D8D8;
+  overflow: hidden;
+  border-radius: 40px;
+  padding: 3%;
+  height: 70%;
+  width: 40%;
+}
+
+.editBox {
+  background-color: #545B77;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listItem {
+  background-color: #374259;
+  overflow: hidden; 
+  padding: 5px;
+  /* padding-left: 25px; */
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 5px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 1;
+  height: 15%;
+}
+.buttonStyle {
+  background-color: #5C8984;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+}
+.buttonStyle:hover {
+  padding: 12px;
+}
