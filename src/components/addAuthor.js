@@ -13,7 +13,7 @@ const AddAuthor = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('Submit ', inputs)
-        edit(inputs)
+        add(inputs)
     }
     return <div className="primaryBox">
         <h2>Add an Author</h2>
@@ -32,7 +32,7 @@ const AddAuthor = () => {
     </div>
 }
 
-function edit(inputs){
+function add(inputs){
     axios.post(`http://localhost:5000/author?fName=${inputs['fName']}&lName=${inputs['lName']}`).then(
         response => {console.log(response)}
     )

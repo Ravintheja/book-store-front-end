@@ -22,7 +22,7 @@ const AddBook = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log('Submit ', inputs)
-        edit(inputs)
+        add(inputs)
     }
     return <div className="primaryBox">
         <h2>Add a Book</h2>
@@ -49,7 +49,7 @@ const AddBook = () => {
     </div>
 }
 
-function edit(inputs){
+function add(inputs){
     axios.post(`http://localhost:5000/book?bname=${inputs['bookName']}&authId=${inputs['authorId']}&isbn=${inputs['isbn']}`).then(
         response => {console.log(response)}
     )

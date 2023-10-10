@@ -34,13 +34,13 @@ const ViewAuthor = () => {
         this author invites their audience to embark on a transformative journey, 
         where the power of words becomes a portal to new experiences and uncharted territories of the human soul. 
         They are a master of their craft, a weaver of dreams, and a guide through the realms of the written word."</p>
-        {editMode ? EditAuthor(fname, lname) : <button className="buttonStyle" disabled="true" type="button" onClick={setEdit(true)}>Click here to edit</button>}
+        {editMode ? EditAuthor(fname, lname, authId) : <button className="buttonStyle" disabled="true" type="button" onClick={setEdit(true)}>Click here to edit</button>}
         </div>
 
 }
 
-const EditAuthor = (firstName, lastName) => {
-    var inputs = {fname : firstName, lname: lastName}
+const EditAuthor = (firstName, lastName, authId) => {
+    var inputs = {fname : firstName, lname: lastName, id: authId}
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -67,7 +67,7 @@ const EditAuthor = (firstName, lastName) => {
 }
 
 function edit(inputs){
-    axios.put(`http://localhost:5000/author?fname=${inputs['fname']}&lname=${inputs['lname']}`).then(
+    axios.put(`http://localhost:5000/author?fname=${inputs['fname']}&lname=${inputs['lname']}$authId=${inputs['id']}`).then(
         response => {console.log(response)}
     )
     console.log('------->> ')

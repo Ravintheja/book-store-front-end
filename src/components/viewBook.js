@@ -39,13 +39,13 @@ const ViewBook = () => {
                 eager to uncover the shocking truth that lies beneath the fog-veiled facade of this picturesque town.
                 Prepare for a pulse-pounding journey through suspense and deception, 
                 where the only certainty is that nothing is as it seems."</p>
-                {editMode ? editBook(name, author, authors) : <button className="buttonStyle" disabled="true" type="button" onClick={setEdit(true)}>Click here to edit</button>}
+                {editMode ? editBook(name, author, authors, isbn) : <button className="buttonStyle" disabled="true" type="button" onClick={setEdit(true)}>Click here to edit</button>}
         </div>
 
 }
-const editBook = (name, author, authors) => {
+const editBook = (name, author, authors, isbnNo) => {
     console.log('Authors ', authors)
-    var inputs = {bookName : name, authorId: null, }
+    var inputs = {bookName : name, authorId: null, isbn: isbnNo }
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -79,7 +79,7 @@ const editBook = (name, author, authors) => {
 }
 
 function edit(inputs){
-    axios.put(`http://localhost:5000/book?bname=${inputs['bookName']}&authId=${inputs['authorId']}`).then(
+    axios.put(`http://localhost:5000/book?bname=${inputs['bookName']}&authId=${inputs['authorId']}&isbn=${inputs['isbn']}`).then(
         response => {console.log(response)}
     )
     console.log('------->> ')
